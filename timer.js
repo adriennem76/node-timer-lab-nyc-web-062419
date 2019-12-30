@@ -11,3 +11,11 @@ if (!argv[2]) {
   console.log('Please provide a valid argument, e.g., 5s or 1min.')
   process.exit(1)
 }
+var interval = setInterval(()=>{
+  timeLeft --
+  console.log(`Left: ${timeLeft}s`)
+  if (timeLeft == 0) {
+    clearInterval(interval)
+    process.exit(0)
+  }
+}, 1000)
